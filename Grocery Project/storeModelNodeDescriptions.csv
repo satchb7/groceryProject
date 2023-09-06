@@ -1,0 +1,97 @@
+Start Node,End Node,Description
+0,0,Loop
+0,1,Berries
+1,1,Loop
+1,2,Help
+1,10,"Fruit, Vegetables"
+2,2,Loop
+2,3,Aisle
+2,12,"Bulk, Spices"
+2,37,Checkout
+3,3,Loop
+3,4,Aisle
+3,14,"Coffee, Tea"
+3,36,Checkout
+4,4,Loop
+4,5,Aisle
+4,16,"Chips, Cereal"
+4,35,Checkout
+5,5,Loop
+5,6,Aisle
+5,18,"PetFood, KitchenSupplies, Cleaning"
+5,34,Checkout
+6,6,Loop
+6,7,Aisle
+6,20,"Beer, SoftDrinks"
+6,33,Supplements
+7,7,Loop
+7,8,Aisle
+7,22,RedWine
+7,32,"Bath, Medicine"
+8,8,Loop
+8,23,"FancyCheese, WhiteWine"
+8,31,"KnickNacks, ColdDrinks"
+9,9,SaladGreens
+9,10,"RootVegetables, Vegan"
+10,10,Loop
+10,11,Mushrooms
+11,11,Loop
+11,12,Aisle
+11,24,"Milk, Cheese, Yogurt"
+12,12,Loop
+12,13,Aisle
+13,13,Loop
+13,14,Aisle
+13,25,FrozenFood
+14,14,Loop
+14,15,Aisle
+15,15,Loop
+15,16,Aisle
+15,26,"Oil, Baking, Cans, Dressing, Vinegar"
+16,16,Loop
+16,17,Aisle
+17,17,Loop
+17,18,Aisle
+17,27,"FruitJuice, Crackers, Snacks"
+18,18,Loop
+18,19,Aisle
+19,19,Loop
+19,20,Aisle
+19,28,"Ethnic, Pasta, PB&J"
+20,20,Loop
+20,21,Aisle
+21,21,Loop
+21,22,Aisle
+21,29,QuickDeli
+22,22,Loop
+22,23,Aisle
+22,30,"Deli, Bread"
+23,23,Loop
+24,24,Loop
+24,25,Eggs
+25,25,Loop
+25,26,Pork
+26,26,Loop
+26,27,Beef
+27,27,Loop
+27,28,Poultry
+28,28,Loop
+28,29,Fish
+29,29,Loop
+29,30,Bakery
+30,30,Loop
+31,31,Loop
+31,32,Aisle
+32,32,Loop
+32,33,Aisle
+33,33,Loop
+33,34,Checkout
+34,34,Loop
+34,35,Checkout
+35,35,Loop
+35,36,Checkout
+36,36,Loop
+36,37,Checkout
+37,37,Loop
+37,0,Exit
+10,9,Produce
