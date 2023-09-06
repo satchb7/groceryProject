@@ -16,11 +16,13 @@ Augment the graph to include edges between these pairings with the relevant cost
 
 Solve for the Eulerian Path on the augmented graph and return the path
 
-** The following section will include an intuitive explanation of each algorithm and how it works, all algorithms were coded from scratch and can be found implemented in the python notebook
-    1)
+The following section will include an intuitive explanation of each algorithm and how it works, all algorithms were coded from scratch and can be found implemented in the python notebook
+
+1) 
+    
 Step one (checking for odd degree nodes) can be done relatively trivially. In the example I had 26 of our 38 nodes as odd degree nodes. If there had been none we could have generated an Euler Path using Fleury’s Algorithm, which I will cover in detail later.
 
-   2) 
+2)
    	In order to find all pairs shortest paths I opted to use the Floyd Warshall algorithm. This algorithm is a dynamic programming approach to finding all pairs shortest paths. Dynamic programming relies on saving the results of solved subproblems to then come together and generate a final solution, effectively reducing redundant computation. Floyd Warshall operates on the assumption that there can be negative edge weights, but no negative cost cycles in the graph.
 The algorithm starts with an N by N graph where all edges i,j are included with their weights, using infinity for everything else. The algorithm then uses a triple for loop for each vertex. The main crux of the algorithm lies in the inequality which can be understood to mean if the existing cost from node i to node j, is greater than the cost from i to some intermediate node k added to the distance from that same k to j then we update the shortest path to be that distance. Once the algorithm finishes running, the resulting N by N matrix contains the shortest from i to j at each entry i,j.
 	Traditionally, the Floyd Warshall algorithm gives the lowest cost from i to j but not the actual path. We added a second N by N matrix keeping track of previous nodes at all points, allowing for backtracking at a later point in time when reconstituting the eulerian path.
