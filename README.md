@@ -27,13 +27,13 @@ Step one (checking for odd degree nodes) can be done relatively trivially. In th
 The algorithm starts with an N by N graph where all edges i,j are included with their weights, using infinity for everything else. The algorithm then uses a triple for loop for each vertex. The main crux of the algorithm lies in the inequality which can be understood to mean if the existing cost from node i to node j, is greater than the cost from i to some intermediate node k added to the distance from that same k to j then we update the shortest path to be that distance. Once the algorithm finishes running, the resulting N by N matrix contains the shortest from i to j at each entry i,j.
 	Traditionally, the Floyd Warshall algorithm gives the lowest cost from i to j but not the actual path. We added a second N by N matrix keeping track of previous nodes at all points, allowing for backtracking at a later point in time when reconstituting the eulerian path.
    
-   3) 
+3) 
 	The minimum cost pairwise matching can be found using an algorithm called Blossom’s algorithm. Due to the complexity of the algorithm and lack of packages available implementing the functionality, as well as only having 26 odd nodes, I opted to model this as a linear programming problem in a fully connected graph, using the results of Floyd Warshall for the edge weights. I used the Gurobi optimization software to solve this minimization problem. The code can be viewed in the attached python notebook.
 
-   4) 
+4) 
 	Once I generated the minimum cost pairwise matching I augmented the graph to include undirected edges between these nodes, with the associated shortest path costs from Floyd Warshall. After doing this we are left with a graph with all even degree nodes, which is guaranteed to have an Euler path.
    
-   5)
+5)
 	Once I had our even degree graph, we are able to use Fleury’s algorithm in order to generate an Euler Path. Fleury’s Algorithm is for undirected graphs, which we needed because we don't want to have to go up and down each aisle in the store, rather just pass along the aisle. Hierholzer’s algorithm can be used to generate an Euler Path for a directed graph. Fleury’s algorithm relies on “not burning bridges”. The basic logic is that you start at a node, And evaluate the edges for if they are valid. A valid edge is an edge that does not disconnect some part of the graph if deleted, which we are able to find using a DFS. The algorithm then traverses node to node using valid edges and deleting edges that have been used until it returns to the start, having generated an Euler Path
 
 Using this method, I was able to generate the most efficient path for an instacart shopper to go through a grocery store resulting in a path only 18% longer than the sum of all edges in the graph.
